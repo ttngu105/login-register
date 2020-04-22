@@ -12,7 +12,6 @@ const cors = require('cors');
 //db config
 const url = require('./config/keys').MongoURI;
 //use cors
-app.use(allowCrossDomain)
 app.use(cors());
 
 //connect to mongoDB
