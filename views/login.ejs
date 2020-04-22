@@ -40,11 +40,29 @@
               </button>
             </div>
             <% } %>
-                    <input placeholder="username"/>
-                    <input placeholder="password"/>
-                    <a href="/users/login" class="btn btn-primary btn-block mb-2"
-                      >Login</a
-                    >
+            <form action="/users/login" method="POST">
+              <div class="form-group">
+                    <input 
+                    type="username"
+                    id="username"
+                    name="username"
+                    class="form-control"
+                    placeholder="username"/>
+              </div>
+              <div class="form-group">
+                    <input 
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="password"/>
+            </div>
+            <button id= 'submit' class="btn btn-primary btn-block mb-2"
+            >Login</button>
+            </form>
+            <p class="lead mt-4">
+              No Account? <a href="/users/register">Register</a>
+            </p>
                   </div>
                 </div>
               </div>

@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const User = require('../models/User');
 const passport = require('passport');
 
+
 router.get("/login",(request,response)=> response.render("login"));
 
 router.get("/register",(request,response)=> response.render("register"));
@@ -77,10 +78,10 @@ router.post("/register",(request,response)=>{
 
 });
 //login handler
-router.post('/users/login',(request,response,next)=>{
+router.post('/login',(request,response,next)=>{
   passport.authenticate('local',{
-    successRedirect:'/dashboard',
-    failureRedirect: '/',
+    successRedirect:'/homepage',
+    failureRedirect: '/users/login',
     failureFlash: true
   })(request,response,next);
 })

@@ -6,8 +6,11 @@ const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+require("./config/passport")(passport);
+
 //db config
 const url = require('./config/keys').MongoURI;
+
 
 //connect to mongoDB
 mongoose.connect(url,{ useNewUrlParser: true , useUnifiedTopology: true })
@@ -26,6 +29,10 @@ app.use(session({
 //passport
 app.use(passport.initialize());
 app.use(passport.session());
+//add route to langing page
+app.get('/homepage',(request,response)=>{
+    response.status(301).redirect('https://ttngu105.github.io/landing-page/')
+});
 // flash
 app.use(flash());
 //global variables
