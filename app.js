@@ -57,6 +57,6 @@ app.listen(port, console.log(`Server started on port ${port}....................
 
 function localhostHandler(request,response,next){
 	response.header('Access-Control-Allow-Origin','*');
-	response.header('Access-Control-Allow-Methods','POST')
+	response.header('Access-Control-Allow-Methods','POST,GET')
 	next();
 }
